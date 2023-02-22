@@ -39,15 +39,15 @@ You can reach us at the email `seer[at]comp.nus.edu.sg`
 * Role: -To be Added soon- 
 * Responsibilities: -To be Added soon- 
 
-### Jean Doe
+### Lu Chenyu
 
-<img src="images/johndoe.png" width="200px">
+<img src="images/profile_chenyu.png" width="200px">
 
-[[github](http://github.com/johndoe)]
-[[portfolio](team/johndoe.md)]
+[[github](http://github.com/adam07018)]
+[[portfolio](team/adam07018.md)]
 
 * Role: Developer
-* Responsibilities: Dev Ops + Threading
+* Responsibilities: Policy Management Features
 
 ### Anunaya Joshi
 
