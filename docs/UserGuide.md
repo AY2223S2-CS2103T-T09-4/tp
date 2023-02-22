@@ -185,9 +185,12 @@ _Details coming soon ..._
 Action | Format, Examples
 --------|------------------
 **Add** | `add n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]…​` <br> e.g., `add n/James Ho p/22224444 e/jamesho@example.com a/123, Clementi Rd, 1234665 t/friend t/colleague`
-**Clear** | `clear`
+**Add a Policy** | `addPolicy addPolicy n/NAME pn/POLICY-NAME d/START-DATE pr/PREMIUM fr/FREQUENCY` <br> e.g, `addPolicy n/John Doe pn/Health d/28/05/2022 pr/300 fr/MONTHLY`
+**Clear** | `clear` (DEPRECATED)
 **Delete** | `delete INDEX`<br> e.g., `delete 3`
+**Delete a Policy** | `deletePolicy n/NAME INDEX` <br> e.g., `deletePolicy n/John Doe 1`
 **Edit** | `edit INDEX [n/NAME] [p/PHONE_NUMBER] [e/EMAIL] [a/ADDRESS] [t/TAG]…​`<br> e.g.,`edit 2 n/James Lee e/jameslee@example.com`
 **Find** | `find KEYWORD [MORE_KEYWORDS]`<br> e.g., `find James Jake`
 **List** | `list`
 **Help** | `help`
+**Exit** | `exit`
