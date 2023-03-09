@@ -3,7 +3,7 @@ layout: page
 title: Developer Guide
 ---
 * Table of Contents
-{:toc}
+  {:toc}
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -265,7 +265,7 @@ _{Explain here how the data archiving feature will be implemented}_
 * Is reasonably comfortable using CLI apps
 
 **Value proposition**:
-* Provide a way to view all clients records easily and compare and analyze their financial information.
+* Provide a way to view all clients' records easily and compare and analyze their financial information.
 * Keep track of client information such as financial goals, current financial status, and investment plans purchased.
 * Make it easier to remind financial advisors on follow-up tasks and future advising sessions.
 * Personalized recommendations: propose personalized financial advice and recommendations tailored to the student’s unique needs and circumstances
@@ -289,7 +289,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 | `**`     | As a financial advisor           | track my client interactions and notes                   | have a clear history of my advising sessions         |
 
 
-#### [Epic] As a financial advisor, I can manage my client investment and insurance plans
+##### [Epic] As a financial advisor, I can manage my client investment and insurance plans
 | Priority | As a …​                          | I can …​                                                 | So that I can…​                                                                              |
 |----------|----------------------------------|----------------------------------------------------------|----------------------------------------------------------------------------------------------|
 | `***`    | As a financial advisor           | keep track of my clients' investment and insurance plans | provide relevant advice                                                                      |
@@ -334,7 +334,7 @@ specified otherwise)
 
 **MSS**
 
-1. Actor inputs client’s personal information
+1. Actor inputs the client’s personal information
 2. System confirms and creates the client profile
 3. Use case ends
 
@@ -378,8 +378,7 @@ specified otherwise)
 
 **MSS**
 
-1. The financial advisor enters the name, account number, or any other relevant information of the client they want to
-find.
+1. The financial advisor enters the name, account number, or any other relevant information of the client they want to find
 2. The system searches for the client based on the entered information.
 3. The system displays a list of clients matching the entered information.
 4. The financial advisor selects the desired client from the list.
@@ -437,7 +436,7 @@ testers are expected to do more *exploratory* testing.
    1. Resize the window to an optimum size. Move the window to a different location. Close the window.
 
    1. Re-launch the app by double-clicking the jar file.<br>
-       Expected: The most recent window size and location is retained.
+      Expected: The most recent window size and location is retained.
 
 1. _{ more test cases …​ }_
 
@@ -445,16 +444,16 @@ testers are expected to do more *exploratory* testing.
 
 1. Deleting a person while all persons are being shown
 
-   1. Prerequisites: List all persons using the `list` command. Multiple persons in the list.
+    1. Prerequisites: List all persons using the `list` command. Multiple persons in the list.
 
-   1. Test case: `delete 1`<br>
-      Expected: First contact is deleted from the list. Details of the deleted contact shown in the status message. Timestamp in the status bar is updated.
+    1. Test case: `delete 1`<br>
+       Expected: First contact is deleted from the list. Details of the deleted contact shown in the status message. Timestamp in the status bar is updated.
 
-   1. Test case: `delete 0`<br>
-      Expected: No person is deleted. Error details shown in the status message. Status bar remains the same.
+    1. Test case: `delete 0`<br>
+       Expected: No person is deleted. Error details shown in the status message. Status bar remains the same.
 
-   1. Other incorrect delete commands to try: `delete`, `delete x`, `...` (where x is larger than the list size)<br>
-      Expected: Similar to previous.
+    1. Other incorrect delete commands to try: `delete`, `delete x`, `...` (where x is larger than the list size)<br>
+       Expected: Similar to previous.
 
 1. _{ more test cases …​ }_
 
@@ -462,6 +461,6 @@ testers are expected to do more *exploratory* testing.
 
 1. Dealing with missing/corrupted data files
 
-   1. _{explain how to simulate a missing/corrupted file, and the expected behavior}_
+    1. _{explain how to simulate a missing/corrupted file, and the expected behavior}_
 
 1. _{ more test cases …​ }_
