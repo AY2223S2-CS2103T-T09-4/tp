@@ -10,23 +10,25 @@ import seedu.address.logic.parser.exceptions.ParseException;
  */
 public class SortByClientNameCommandParser implements Parser<SortByClientNameCommand> {
     /**
-     * @param args any integer number (inOrder) or 0 (reverseOrder)
+     * @param userInput any integer number (inOrder) or 0 (reverseOrder)
      * @return command
      * @throws ParseException
      */
     @Override
-    public SortByClientNameCommand parse(String args) throws ParseException {
-        requireNonNull(args);
-        try {
-            args = args.trim();
-            int index = Integer.parseInt(args);
-            if (index == 0) {
-                return new SortByClientNameCommand(false);
-            }
-            return new SortByClientNameCommand(true);
-        } catch (NumberFormatException ive) {
+    public SortByClientNameCommand parse(String userInput) throws ParseException {
+        requireNonNull(userInput);
+        userInput = userInput.trim();
+        if (userInput.isEmpty()) {
             throw new ParseException(
-                    String.format(MESSAGE_INVALID_COMMAND_FORMAT, SortByClientNameCommand.MESSAGE_USAGE), ive);
+                    String.format(MESSAGE_INVALID_COMMAND_FORMAT, SortByClientNameCommand.MESSAGE_USAGE));
         }
+        if (userInput.equals("asc")) {
+            return new SortByClientNameCommand(true);
+        }
+        if (userInput.equals("dsc")) {
+            return new SortByClientNameCommand(false);
+        }
+        throw new ParseException(
+                String.format(MESSAGE_INVALID_COMMAND_FORMAT, SortByClientNameCommand.MESSAGE_USAGE));
     }
 }

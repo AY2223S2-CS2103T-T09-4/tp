@@ -12,16 +12,18 @@ public class SortByClientEmailCommandParser implements Parser<SortByClientEmailC
     @Override
     public SortByClientEmailCommand parse(String userInput) throws ParseException {
         requireNonNull(userInput);
-        try {
-            userInput = userInput.trim();
-            int index = Integer.parseInt(userInput);
-            if (index == 0) {
-                return new SortByClientEmailCommand(false);
-            }
-            return new SortByClientEmailCommand(true);
-        } catch (NumberFormatException ive) {
+        userInput = userInput.trim();
+        if (userInput.isEmpty()) {
             throw new ParseException(
-                    String.format(MESSAGE_INVALID_COMMAND_FORMAT, SortByClientEmailCommand.MESSAGE_USAGE), ive);
+                    String.format(MESSAGE_INVALID_COMMAND_FORMAT, SortByClientEmailCommand.MESSAGE_USAGE));
         }
+        if (userInput.equals("asc")) {
+            return new SortByClientEmailCommand(true);
+        }
+        if (userInput.equals("dsc")) {
+            return new SortByClientEmailCommand(false);
+        }
+        throw new ParseException(
+                String.format(MESSAGE_INVALID_COMMAND_FORMAT, SortByClientEmailCommand.MESSAGE_USAGE));
     }
 }

@@ -13,16 +13,18 @@ public class SortByClientPhoneCommandParser implements Parser<SortByClientPhoneC
     @Override
     public SortByClientPhoneCommand parse(String userInput) throws ParseException {
         requireNonNull(userInput);
-        try {
-            userInput = userInput.trim();
-            int index = Integer.parseInt(userInput);
-            if (index == 0) {
-                return new SortByClientPhoneCommand(false);
-            }
-            return new SortByClientPhoneCommand(true);
-        } catch (NumberFormatException ive) {
+        userInput = userInput.trim();
+        if (userInput.isEmpty()) {
             throw new ParseException(
-                    String.format(MESSAGE_INVALID_COMMAND_FORMAT, SortByClientPhoneCommand.MESSAGE_USAGE), ive);
+                    String.format(MESSAGE_INVALID_COMMAND_FORMAT, SortByClientPhoneCommand.MESSAGE_USAGE));
         }
+        if (userInput.equals("asc")) {
+            return new SortByClientPhoneCommand(true);
+        }
+        if (userInput.equals("dsc")) {
+            return new SortByClientPhoneCommand(false);
+        }
+        throw new ParseException(
+                String.format(MESSAGE_INVALID_COMMAND_FORMAT, SortByClientPhoneCommand.MESSAGE_USAGE));
     }
 }
