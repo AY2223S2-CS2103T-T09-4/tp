@@ -1,5 +1,4 @@
 package seedu.address.logic.parser;
-
 import static java.util.Objects.requireNonNull;
 import static seedu.address.commons.core.Messages.MESSAGE_INVALID_COMMAND_FORMAT;
 
@@ -26,18 +25,16 @@ public class SortByClientNameCommandParser implements Parser<SortByClientNameCom
         try {
             args = args.trim();
             int index = Integer.parseInt(args);
-
             if (index == 0) {
                 logger.info("Parsed: " + args);
                 return new SortByClientNameCommand(false);
             }
-
             logger.info("Parsed: " + args);
             return new SortByClientNameCommand(true);
         } catch (NumberFormatException ive) {
             logger.info("Missing parameters: " + args);
             throw new ParseException(
-                String.format(MESSAGE_INVALID_COMMAND_FORMAT, SortByClientNameCommand.MESSAGE_USAGE), ive);
+                    String.format(MESSAGE_INVALID_COMMAND_FORMAT, SortByClientNameCommand.MESSAGE_USAGE), ive);
         }
     }
 }

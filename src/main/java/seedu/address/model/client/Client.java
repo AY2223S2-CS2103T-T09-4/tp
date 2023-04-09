@@ -27,6 +27,7 @@ public class Client implements Comparable<Client> {
     private final Address address;
     private final UniquePolicyList policyList;
     private final FilteredList<Policy> filteredPolicies;
+
     private final Appointment appointment;
 
     /**
@@ -95,9 +96,9 @@ public class Client implements Comparable<Client> {
         }
 
         return otherClient != null
-            && otherClient.getName().equals(getName())
-            && (otherClient.getPhone().equals(getPhone())
-            || otherClient.getEmail().equals(getEmail()));
+                && otherClient.getName().equals(getName())
+                && (otherClient.getPhone().equals(getPhone())
+                || otherClient.getEmail().equals(getEmail()));
     }
 
     /**
@@ -158,6 +159,10 @@ public class Client implements Comparable<Client> {
     @Override
     public int compareTo(Client o) {
         return this.toString().compareTo(o.toString());
+    }
+
+    public String getPhoneNumber() {
+        return this.getPhoneNumber();
     }
 
 }
